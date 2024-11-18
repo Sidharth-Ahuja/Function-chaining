@@ -1,4 +1,5 @@
 import React, { forwardRef } from 'react';
+import dotsIcon from "../../assets/dotsIcon.svg";
 
 interface FunctionCardProps {
   index: number;
@@ -18,8 +19,10 @@ const FunctionCard = forwardRef<HTMLDivElement, FunctionCardProps>(
         ref={ref}
         className="border border-gray-300 rounded-[15px] shadow-lg p-[20px] bg-white w-[235px] "
       >
-        <h2 className="text-sm font-medium mb-[20px] mt-[-5px] text-customGray">Function: {index + 1}</h2>
-
+        <div className='flex items-center mb-[20px] mt-[-5px]'>
+          <img src={dotsIcon} />
+          <h2 className="text-sm font-medium text-customGray ml-[7px]">Function: {index + 1}</h2>
+        </div>
         <div className='text-customBlack text-xs'>Equation</div>
         <input
           type="text"
@@ -28,7 +31,7 @@ const FunctionCard = forwardRef<HTMLDivElement, FunctionCardProps>(
           placeholder="e.g., x^2 + 3"
           className="border border-gray-300 h-[33px] text-xs rounded-md w-full p-2 focus:ring-blue-500 focus:border-blue-500 mt-[4px]"
         />
-         <div className='text-customBlack mt-[17px] text-xs'>Next function</div>
+        <div className='text-customBlack mt-[17px] text-xs'>Next function</div>
         <select
           disabled
           className="border border-gray-300 h-[33px] text-xs rounded-md w-full p-2 bg-gray-100 text-gray-500 mt-[4px] mb-[51px]"
